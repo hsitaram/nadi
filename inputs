@@ -1,0 +1,19 @@
+prob_lo = 0.0 0.0 0.0
+prob_hi = 1.0 1.0 0.1
+ncells  = 64  64  1
+max_grid_size = 8
+is_it_periodic = 0 0 1
+
+#periodic 0
+#wall 1
+#inflow 2
+#outflow 3
+
+lo_bc = 1 1 0
+hi_bc = 1 1 0 
+
+viscosity = 1e-2
+
+timestep = 0.001
+final_time = 10.0
+max_step = 1000
