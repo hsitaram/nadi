@@ -1,6 +1,6 @@
 #ifndef BOUNDARY_CONDITIONS_H_
 #define BOUNDARY_CONDITIONS_H_
-#include <globalDefines.H>
+#include <global_defines.H>
 
 AMREX_GPU_DEVICE
 AMREX_FORCE_INLINE

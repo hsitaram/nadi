@@ -26,8 +26,8 @@ infile.close()
 #read EulerAMR solution
 #=======================================
 ds=yt.load(argv[1])
-slicedir   = argv[2]
-wallmovdir = argv[3]
+slicedir   = "z"
+wallmovdir = "x"
 
 clength   = 1.0
 cwidth    = 1.0
@@ -47,7 +47,7 @@ fld = np.array(frb[fieldname])[:,int(res/2)]
 #Plot solutions
 #=======================================
 fig,(ax1,ax2)=plt.subplots(1,2,figsize=(8,3))
-ax1.plot(y,fld/np.max(fld),'k',label="EulerAMR")
+ax1.plot(y,fld/np.max(fld),'k',label="nadi")
 ax1.plot(y_ghia,v_ghia,'r*',label="Ghia et al.,JCP,48,pp 387-411,1982")
 ax1.legend(loc="best")
 

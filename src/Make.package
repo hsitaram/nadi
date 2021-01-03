@@ -1,2 +1,2 @@
-CEXE_sources += main.cpp solveManager.cpp 
-CEXE_headers += solveManager.H initialize_fields.H globalDefines.H bcFill.H externbc.H boundary_conditions.H
+CEXE_sources += main.cpp solve_manager.cpp boundary.cpp projection.cpp momentum.cpp 
+CEXE_headers += solve_manager.H global_defines.H

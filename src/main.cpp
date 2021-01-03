@@ -7,7 +7,7 @@
 #include <AMReX_EB2.H>
 #include <AMReX_EB2_IF.H>
 #include <AMReX_EB_utils.H>
-#include <solveManager.H>
+#include <solve_manager.H>
 
 int main (int argc, char* argv[])
 {

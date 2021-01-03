@@ -16,4 +16,4 @@ viscosity = 1e-2
 
 timestep = 0.001
 final_time = 10.0
-max_step = 1000
+max_step = 3000

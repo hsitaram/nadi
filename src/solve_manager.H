@@ -35,18 +35,12 @@ class solveManager
         Vector<int> m_bc_lo;
         Vector<int> m_bc_hi;
 
-        Vector<BCRec> m_bcrecs;
-        BCRec m_vy_bc;
-        BCRec m_vz_bc;
-        BCRec m_pres_bc;
-
     public:
 
         solveManager(){};
         void read_problem_inputs();
         void write_outputs(int step,Real time);
         void init_fields();
-        void update_cc_vars();
         void update_staggered_layers();
         void set_bc_vals(Real time);
         void pres_poisson();
