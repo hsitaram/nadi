@@ -83,8 +83,6 @@ void solveManager::vel_solve(Real time,Real dt)
             vx_src_arr(i,j,k) -= visc*(vx(i+1,j,k)+vx(i-1,j,k)-2.0*vx(i,j,k))/(dx[0]*dx[0]);
             vx_src_arr(i,j,k) -= visc*(vx(i,j+1,k)+vx(i,j-1,k)-2.0*vx(i,j,k))/(dx[1]*dx[1]);
             vx_src_arr(i,j,k) -= visc*(vx(i,j,k+1)+vx(i,j,k-1)-2.0*vx(i,j,k))/(dx[2]*dx[2]);
-
-            //vx(i,j,k) += -vx_src_arr(i,j,k)*delt;
         });
 
         amrex::ParallelFor(y_bx, [=] AMREX_GPU_DEVICE(int i,int j,int k)
@@ -138,8 +136,6 @@ void solveManager::vel_solve(Real time,Real dt)
             vy_src_arr(i,j,k) -= visc*(vy(i+1,j,k)+vy(i-1,j,k)-2.0*vy(i,j,k))/(dx[0]*dx[0]);
             vy_src_arr(i,j,k) -= visc*(vy(i,j+1,k)+vy(i,j-1,k)-2.0*vy(i,j,k))/(dx[1]*dx[1]);
             vy_src_arr(i,j,k) -= visc*(vy(i,j,k+1)+vy(i,j,k-1)-2.0*vy(i,j,k))/(dx[2]*dx[2]);
-            
-            //vy(i,j,k) += -vy_src_arr(i,j,k)*delt;
         });
 
         amrex::ParallelFor(z_bx, [=] AMREX_GPU_DEVICE(int i,int j,int k)
@@ -193,11 +189,6 @@ void solveManager::vel_solve(Real time,Real dt)
             vz_src_arr(i,j,k) -= visc*(vz(i+1,j,k)+vz(i-1,j,k)-2.0*vz(i,j,k))/(dx[0]*dx[0]);
             vz_src_arr(i,j,k) -= visc*(vz(i,j+1,k)+vz(i,j-1,k)-2.0*vz(i,j,k))/(dx[1]*dx[1]);
             vz_src_arr(i,j,k) -= visc*(vz(i,j,k+1)+vz(i,j,k-1)-2.0*vz(i,j,k))/(dx[2]*dx[2]);
-
-            if(fabs(vz_src_arr(i,j,k)) > 0.0)
-                Print()<<"vz_src:"<<vz_src_arr(i,j,k)<<"\n";
-
-            //vz(i,j,k) += -vz_src_arr(i,j,k)*delt;
         });
         
         amrex::ParallelFor(x_bx, [=] AMREX_GPU_DEVICE(int i,int j,int k)
