@@ -14,4 +14,5 @@ to get the latest amrex.
 
 * running - mpirun -n \<nprocs\> nadi3d.gnu.MPI.ex inputs. It does 3000 steps, takes about a minute with 32 processors.
   
-* verify solution - use python script verify_vel.py python verify_vel.py <last_plot_folder>, you will get an image file called vel_drivencavity_x.png.
+* verify solution - use python script verify_vel.py as python verify_vel.py <last_plot_folder>, you will need yt library for this.
+you will get an image file called vel_drivencavity_x.png. You can also open the plot file in paraview.
