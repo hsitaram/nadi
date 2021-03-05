@@ -1,4 +1,4 @@
-name: CI_echemamr                                                                                                                                          
+name: nadiCI                                                                                                                                    
 on: 
    push:
      branches: [ main ]
@@ -15,7 +15,8 @@ jobs:
     - name: System Dependencies
       run: | 
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends build-essential g++ gfortran libopenmpi-dev openmpi-bin
+        sudo apt-get install -y --no-install-recommends \
+        build-essential g++ gfortran libopenmpi-dev openmpi-bin
     - name: Build
       working-directory: ./test/drivenCavity
       run: |
@@ -23,4 +24,4 @@ jobs:
     - name: Run
       working-directory: ./test/DriftDiffuse1d
       run: |
-        ./echemAMR3d.gnu.MPI.ex inputs.2d
+        mpirun -n 2 ./nadi3d.gnu.MPI.ex inputs
