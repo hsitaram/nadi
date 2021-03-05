@@ -22,6 +22,6 @@ jobs:
       run: |
         make -j 2 COMP=gnu
     - name: Run
-      working-directory: ./test/DriftDiffuse1d
+      working-directory: ./test/drivenCavity
       run: |
         mpirun -n 2 ./nadi3d.gnu.MPI.ex inputs
