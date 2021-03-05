@@ -10,17 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - name: System Dependencies
       run: | 
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends build-essential g++ gfortran
-    - name: AMReX
-      run: |
-         mkdir build
-         git clone https://github.com/AMReX-Codes/amrex.git build/amrex
+        sudo apt-get install -y --no-install-recommends build-essential g++ gfortran libopenmpi-dev openmpi-bin
     - name: Build
-      env:
-         AMREX_HOME: ${GITHUB_WORKSPACE}/build/amrex
       working-directory: ./test/drivenCavity
       run: |
         make -j 2 COMP=gnu
